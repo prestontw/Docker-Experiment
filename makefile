@@ -9,3 +9,6 @@ runOutput:	output
 
 dockerRun:
 	$(DOCKER_PREFIX) $(MAKE) runOutput
+
+dockerCompile:
+	$(DOCKER_PREFIX) $(MAKE) output
