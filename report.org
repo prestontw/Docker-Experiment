@@ -24,3 +24,12 @@
 * Running compilation
 ** Mounting host director as data volume
    $ docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py
+   -d flag tells docker to run container in background
+   -P flag tells Docker to map any required network ports inside our container to our host
+   -v flag adds data volume
+
+   So generally:
+   $ docker run -d -P --name <name of container> -v <host absolute path>:<container absolute path>\
+     <image name> <thing to do>
+   Might not need -P flag in all cases, though.
+   Might work well with pyret and cpo!
