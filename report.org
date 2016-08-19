@@ -1,2 +1,17 @@
+* Setting up on host
+  Install
+  Add to groups?
+  -> could just run as sudo instead: http://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/
+  $ sudo systemctl start docker (could also enable it)
 * Installing a box
+  Should happen by default by $ docker run <box>, or by Dockerfile
+  Check out boxes at DockerHub
+  $ docker pull ubuntu:16.04 (or something of the sort to get a specific image)
 * Setting up Dockerfile
+  FROM ubuntu:16.04
+  -> will download this image
+* Building an image
+  $ sudo docker build . (assuming there is a dockerfile in the current directory)
+* Running compilation
+** Mounting host director as data volume
+   $ docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py
