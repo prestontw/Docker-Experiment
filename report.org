@@ -21,6 +21,12 @@
 * Removing images and containers
   $ docker rmi <image>
   $ docker rm <container>
+* Turn container into image
+  $ sudo docker commit <container id> <image name>
+* To get bash working
+  $ sudo docker run -i -t <image name> /bin/bash
+  -i makes it interactive
+  -t allocates a pseudo TTY
 * Running compilation
 ** Mounting host director as data volume
    $ docker run -d -P --name web -v /src/webapp:/opt/webapp training/webapp python app.py
@@ -33,3 +39,12 @@
      <image name> <thing to do>
    Might not need -P flag in all cases, though.
    Might work well with pyret and cpo!
+** Progress
+   sudo docker run --name compilation -v /home/preston/docker-experiment:/opt/docker-experiment\
+   ubuntu-gcc gcc test.c
+   -> can't find test.c
+
+   can add --rm flag to immediately destroy container
+** Final command
+   $ sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc gcc test.c
+   and a.out is in current directory!
