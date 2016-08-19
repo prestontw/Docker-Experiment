@@ -48,3 +48,5 @@
 ** Final command
    $ sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc gcc test.c
    and a.out is in current directory!
+* To think about:
+  Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
