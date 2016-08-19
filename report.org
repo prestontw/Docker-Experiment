@@ -50,3 +50,4 @@
    and a.out is in current directory!
 * To think about:
   - Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
+  - Add preston to docker user group so that I don't have to supply password when running make in emacs.
