@@ -50,6 +50,3 @@
    and a.out is in current directory!
 * To think about:
   - Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
-  - Have weird levels of makefiles.
-    make would only compile in container if host source file has changed since then.
-    but, it is working properly now with dockerCompile
