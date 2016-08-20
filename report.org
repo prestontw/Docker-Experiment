@@ -21,6 +21,9 @@
 * Removing images and containers
   $ docker rmi <image>
   $ docker rm <container>
+
+  To remove all containers:
+  $ sudo docker rm $(sudo docker ps -aq)
 * Turn container into image
   $ sudo docker commit <container id> <image name>
 * To get bash working
