@@ -48,6 +48,8 @@
 ** Final command
    $ sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc gcc test.c
    and a.out is in current directory!
+* Running webserver
+  Remember to have server.pem.
 * To think about:
   - Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
   - Add preston to docker user group so that I don't have to supply password when running make in emacs.
