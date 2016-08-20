@@ -1,14 +1,17 @@
-GCC=gcc
-DOCKER_PREFIX=sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc
+COMPILE=javac
+RUN=java
+DOCKER_PREFIX=sudo docker run --rm -v /home/preston/docker-experiment:/opt/src
+BUILD_BOX=java-build
+RUN_BOX=java-run
 
-output:	test.c
-	$(GCC) $< -o $@
+test.class:	test.java
+	$(COMPILE) $<
 
-runOutput:	output
-	./output
+runOutput:	test.class
+	$(RUN) test
 
 dockerRun:
-	$(DOCKER_PREFIX) $(MAKE) runOutput
+	$(DOCKER_PREFIX) $(RUN_BOX) $(MAKE) runOutput
 
 dockerCompile:
-	$(DOCKER_PREFIX) $(MAKE) output
+	$(DOCKER_PREFIX) $(BUILD_BOX) $(MAKE) test.class
