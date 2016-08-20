@@ -5,13 +5,10 @@ BUILD_BOX=java-build
 RUN_BOX=java-run
 
 test.class:	test.java
-	$(COMPILE) $<
+	$(DOCKER_PREFIX) $(BUILD_BOX) $(COMPILE) $<
 
 runOutput:	test.class
 	$(RUN) test
 
-dockerRun:
+dockerRun:	test.class
 	$(DOCKER_PREFIX) $(RUN_BOX) $(MAKE) runOutput
-
-dockerCompile:
-	$(DOCKER_PREFIX) $(BUILD_BOX) $(MAKE) test.class
