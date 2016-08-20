@@ -53,5 +53,7 @@
    $ sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc gcc test.c
    and a.out is in current directory!
 * To think about:
-  - Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
+  - Is having split containers for building and running worth it?
+    Might shrink size, but slightly annoying that one make command depends on other machine running.
+    Could rewrite make rules, though, to fix this.
   - Add preston to docker user group so that I don't have to supply password when running make in emacs.
