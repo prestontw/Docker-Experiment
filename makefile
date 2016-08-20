@@ -1,14 +1,5 @@
-GCC=gcc
-DOCKER_PREFIX=sudo docker run --rm -v /home/preston/docker-experiment:/opt/src ugcc
+PYTHON=python3
+DOCKER_PREFIX=sudo docker run --rm -d -P /home/preston/docker-experiment:/opt/src ugcc
 
-output:	test.c
-	$(GCC) $< -o $@
-
-runOutput:	output
-	./output
-
-dockerRun:
-	$(DOCKER_PREFIX) $(MAKE) runOutput
-
-dockerCompile:
-	$(DOCKER_PREFIX) $(MAKE) output
+run:
+	$(DOCKER_PREFIX) $(PYTHON) simple.html
