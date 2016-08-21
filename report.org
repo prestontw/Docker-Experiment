@@ -50,6 +50,11 @@
    and a.out is in current directory!
 * Running webserver
   Remember to have server.pem.
+  can pass -p <host port>:<container port> instead of -P for specific
+  At least have to pass container port if using -p.
+
+  Can expose port in dockerfile.
+  Then -P will expose. Can see with sudo docker port <container name>
 * To think about:
   - Having one container compile and another container run: http://blog.terranillius.com/post/docker_builder_pattern/
   - Add preston to docker user group so that I don't have to supply password when running make in emacs.
