@@ -31,7 +31,6 @@ actual-target: something
 
 Though the separation is nice,
 it might be more convenient to have one makefile.
-
-## TODO
-What would the dependencies for the docker-target be?
-The same as the actual target?
+`one_make` is a branch that demonstrates this.
+This might be better for smaller projects, or rather,
+one makefile might not be good for larger projects.
