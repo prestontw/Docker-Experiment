@@ -4,7 +4,7 @@ CURRENT_DIR=subdir
 
 PYTHON=python3
 
-docker-test:	./child.py ../parent.py
+docker-test:
 	$(DOCKER) $(MAKE) -C $(CURRENT_DIR) test
 
 test:	./child.py ../parent.py
