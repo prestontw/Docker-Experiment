@@ -32,6 +32,6 @@ actual-target: something
 Though the separation is nice,
 it might be more convenient to have one makefile.
 
-## TODO
-What would the dependencies for the docker-target be?
-The same as the actual target?
+## Dependencies of docker targets
+It's fine to not have the docker targets have dependencies,
+since the actual targets handle those themselves.
