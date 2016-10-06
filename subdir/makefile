@@ -9,3 +9,4 @@ docker-test:	./child.py ../parent.py
 
 test:	./child.py ../parent.py
 	$(PYTHON) child.py
+	echo hello > test
